@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Assessment - Skill Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="progress_tracker.html">Progress Tracker</a></li>
+                <li><a href="learning_resources.html">Learning Resources</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Skill Assessment: Frontend Development</h1>
+        <form id="quizForm" method="POST" action="submit_quiz.php">
+            <label for="q1">Question 1: What is HTML?</label><br>
+            <input type="radio" name="q1" value="1"> A programming language<br>
+            <input type="radio" name="q1" value="0"> A markup language<br><br>
+
+            <label for="q2">Question 2: What is CSS used for?</label><br>
+            <input type="radio" name="q2" value="1"> Styling HTML elements<br>
+            <input type="radio" name="q2" value="0"> Storing data<br><br>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </main>
+</body>
+</html>

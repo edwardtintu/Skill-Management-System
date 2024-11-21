@@ -1,0 +1,174 @@
+<?php
+session_start(); // Start the session to store CSRF token
+
+// Generate a random CSRF token if one doesn't exist
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Create a secure random token
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Skill Management System</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4a90e2, #50a3a2);
+        }
+
+        .registration-container {
+            width: 90%;
+            max-width: 450px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .registration-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #555;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #50a3a2;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4a90e2;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-text a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Student Registration</h2>
+        <form action="register.php" method="POST" id="registrationForm">
+            <!-- CSRF Token Field -->
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="education_level">Education Level</label>
+                <select id="education_level" name="education_level" required>
+                    <option value="">Select Education Level</option>
+                    <option value="10">10th Grade</option>
+                    <option value="12">12th Grade</option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Postgraduate">Postgraduate</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="desired_job_role">Desired Job Role</label>
+                <select id="desired_job_role" name="desired_job_role" required>
+                    <option value="">Select Desired Job Role</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Backend Developer">Backend Developer</option>
+                    <option value="Full Stack Developer">Full Stack Developer</option>
+                    <option value="Data Analyst">Data Analyst</option>
+                    <option value="Data Scientist">Data Scientist</option>
+                    <option value="DevOps Engineer">DevOps Engineer</option>
+                    <option value="Mobile App Developer">Mobile App Developer</option>
+                    <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                    <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="interests">Interests (Comma separated skills)</label>
+                <input type="text" id="interests" name="interests" placeholder="e.g., Java, Python, Web Development">
+            </div>
+
+            <div class="form-group">
+                <label for="current_skills">Current Skills</label>
+                <textarea id="current_skills" name="current_skills" rows="4" placeholder="Describe your current skills" required></textarea>
+            </div>
+
+            <button type="submit" name="submit">Register</button>
+        </form>
+
+        <div class="footer-text">
+            Already have an account? <a href="login.php">Login here</a>
+        </div>
+    </div>
+</body>
+</html>
