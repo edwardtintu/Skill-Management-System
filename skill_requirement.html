@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Requirement for Software Engineering Jobs</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #3E64FF;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .job-buttons {
+            width: 30%;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .job-buttons h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .job-buttons button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 8px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .job-buttons button:hover {
+            background-color: #45a049;
+        }
+
+        .skills-display {
+            width: 65%;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .skills-display h2 {
+            color: #3E64FF;
+            margin-bottom: 15px;
+        }
+
+        .skills-display ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills-display li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-display li strong {
+            color: #333;
+        }
+
+        footer {
+            background-color: #3E64FF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Software Engineering Job Skills Requirements</h1>
+    </header>
+
+    <div class="container">
+        <!-- Job buttons section -->
+        <div class="job-buttons">
+            <h2>Available Job Roles</h2>
+            <button onclick="showSkills('softwareEngineer')">Software Engineer</button>
+            <button onclick="showSkills('dataScientist')">Data Scientist</button>
+            <button onclick="showSkills('securityAnalyst')">Security Analyst</button>
+            <button onclick="showSkills('cloudEngineer')">Cloud Engineer</button>
+            <button onclick="showSkills('mobileDeveloper')">Mobile Developer</button>
+            <button onclick="showSkills('softwareArchitect')">Software Architect</button>
+            <button onclick="showSkills('aiEngineer')">AI Engineer</button>
+            <button onclick="showSkills('uxDesigner')">UX Designer</button>
+            <button onclick="showSkills('devOpsEngineer')">DevOps Engineer</button>
+            <button onclick="showSkills('frontendDeveloper')">Frontend Developer</button>
+        </div>
+
+        <!-- Skills display section -->
+        <div id="skills-display" class="skills-display">
+            <p>Select a job role to see the required skills and job description.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Software Engineering Job Skills</p>
+    </footer>
+
+    <script>
+        // Job roles data with skills and descriptions
+        const jobSkills = {
+            softwareEngineer: {
+                title: "Software Engineer",
+                description: "Software Engineers design, develop, test, and maintain software applications and systems.",
+                skills: [
+                    { name: "Java Programming", duration: "15 days" },
+                    { name: "Algorithms and Data Structures", duration: "12 days" },
+                    { name: "Version Control (Git)", duration: "7 days" },
+                    { name: "Database Design", duration: "10 days" },
+                    { name: "Software Testing", duration: "8 days" },
+                    { name: "Agile Methodologies", duration: "6 days" },
+                    { name: "Problem-Solving", duration: "10 days" },
+                    { name: "Web Development", duration: "12 days" },
+                    { name: "Cloud Computing", duration: "10 days" },
+                    { name: "Machine Learning", duration: "15 days" }
+                ]
+            },
+            dataScientist: {
+                title: "Data Scientist",
+                description: "Data Scientists analyze complex data to help companies make informed decisions using statistical techniques.",
+                skills: [
+                    { name: "Python Programming", duration: "12 days" },
+                    { name: "Data Visualization", duration: "10 days" },
+                    { name: "Statistics", duration: "8 days" },
+                    { name: "Machine Learning", duration: "15 days" },
+                    { name: "Data Wrangling", duration: "10 days" },
+                    { name: "Deep Learning", duration: "15 days" },
+                    { name: "SQL", duration: "8 days" },
+                    { name: "Big Data Tools", duration: "12 days" },
+                    { name: "Data Mining", duration: "10 days" },
+                    { name: "Communication Skills", duration: "6 days" }
+                ]
+            },
+            securityAnalyst: {
+                title: "Security Analyst",
+                description: "Security Analysts protect an organization's information systems from cyber threats and vulnerabilities.",
+                skills: [
+                    { name: "Network Security", duration: "10 days" },
+                    { name: "Penetration Testing", duration: "15 days" },
+                    { name: "Firewalls", duration: "8 days" },
+                    { name: "Encryption", duration: "10 days" },
+                    { name: "Incident Response", duration: "7 days" },
+                    { name: "Risk Management", duration: "8 days" },
+                    { name: "Security Audits", duration: "9 days" },
+                    { name: "Ethical Hacking", duration: "12 days" },
+                    { name: "Cloud Security", duration: "12 days" },
+                    { name: "Compliance and Regulations", duration: "10 days" }
+                ]
+            },
+            cloudEngineer: {
+                title: "Cloud Engineer",
+                description: "Cloud Engineers design, deploy, and maintain cloud-based systems and infrastructure.",
+                skills: [
+                    { name: "AWS/Azure/GCP", duration: "15 days" },
+                    { name: "Cloud Security", duration: "12 days" },
+                    { name: "Networking", duration: "10 days" },
+                    { name: "Virtualization", duration: "12 days" },
+                    { name: "Linux Administration", duration: "10 days" },
+                    { name: "Database Management", duration: "10 days" },
+                    { name: "Containers (Docker, Kubernetes)", duration: "12 days" },
+                    { name: "Scripting (Bash, Python)", duration: "8 days" },
+                    { name: "DevOps Practices", duration: "14 days" },
+                    { name: "Disaster Recovery", duration: "8 days" }
+                ]
+            },
+            mobileDeveloper: {
+                title: "Mobile Developer",
+                description: "Mobile Developers create applications for mobile platforms like iOS and Android.",
+                skills: [
+                    { name: "Java/Kotlin (Android)", duration: "12 days" },
+                    { name: "Swift (iOS)", duration: "10 days" },
+                    { name: "React Native", duration: "14 days" },
+                    { name: "UI/UX Design", duration: "10 days" },
+                    { name: "APIs and Backend Integration", duration: "8 days" },
+                    { name: "Cross-Platform Development", duration: "12 days" },
+                    { name: "Mobile Testing", duration: "10 days" },
+                    { name: "App Deployment", duration: "8 days" },
+                    { name: "Version Control", duration: "7 days" },
+                    { name: "Agile Development", duration: "6 days" }
+                ]
+            },
+            softwareArchitect: {
+                title: "Software Architect",
+                description: "Software Architects design the structure and framework for software applications and systems.",
+                skills: [
+                    { name: "Software Design Patterns", duration: "12 days" },
+                    { name: "System Design", duration: "15 days" },
+                    { name: "Cloud Architecture", duration: "12 days" },
+                    { name: "Leadership Skills", duration: "10 days" },
+                    { name: "Java / Python / C++", duration: "12 days" },
+                    { name: "Version Control", duration: "7 days" },
+                    { name: "Database Design", duration: "10 days" },
+                    { name: "Project Management", duration: "8 days" },
+                    { name: "CI/CD", duration: "10 days" },
+                    { name: "Security Best Practices", duration: "9 days" }
+                ]
+            },
+            aiEngineer: {
+                title: "AI Engineer",
+                description: "AI Engineers create intelligent algorithms and systems that can simulate human-like thinking and decision-making.",
+                skills: [
+                    { name: "Machine Learning", duration: "15 days" },
+                    { name: "Deep Learning", duration: "15 days" },
+                    { name: "Python / R", duration: "12 days" },
+                    { name: "Data Science", duration: "10 days" },
+                    { name: "Natural Language Processing", duration: "14 days" },
+                    { name: "Computer Vision", duration: "12 days" },
+                    { name: "TensorFlow / PyTorch", duration: "12 days" },
+                    { name: "Big Data Analytics", duration: "10 days" },
+                    { name: "Model Deployment", duration: "8 days" },
+                    { name: "AI Ethics", duration: "6 days" }
+                ]
+            },
+            uxDesigner: {
+                title: "UX Designer",
+                description: "UX Designers focus on creating user-friendly and aesthetically pleasing interfaces for applications.",
+                skills: [
+                    { name: "Wireframing", duration: "8 days" },
+                    { name: "Prototyping", duration: "10 days" },
+                    { name: "User Research", duration: "12 days" },
+                    { name: "UI Design", duration: "10 days" },
+                    { name: "Sketch / Figma", duration: "8 days" },
+                    { name: "Usability Testing", duration: "10 days" },
+                    { name: "Interaction Design", duration: "12 days" },
+                    { name: "Human-Centered Design", duration: "8 days" },
+                    { name: "Visual Design", duration: "7 days" },
+                    { name: "Front-End Development Basics", duration: "10 days" }
+                ]
+            },
+            devOpsEngineer: {
+                title: "DevOps Engineer",
+                description: "DevOps Engineers manage and automate IT infrastructure and software development processes.",
+                skills: [
+                    { name: "Automation Tools", duration: "12 days" },
+                    { name: "CI/CD", duration: "10 days" },
+                    { name: "Cloud Infrastructure", duration: "12 days" },
+                    { name: "Docker & Kubernetes", duration: "14 days" },
+                    { name: "Infrastructure as Code", duration: "10 days" },
+                    { name: "Linux/Unix Systems", duration: "12 days" },
+                    { name: "Version Control", duration: "8 days" },
+                    { name: "Scripting", duration: "8 days" },
+                    { name: "Monitoring Tools", duration: "7 days" },
+                    { name: "Collaboration Tools", duration: "6 days" }
+                ]
+            }
+        };
+
+        // Function to display skills and job description
+        function showSkills(jobRole) {
+            const job = jobSkills[jobRole];
+            let skillList = "<h2>" + job.title + " Skills & Requirements</h2>";
+            skillList += "<p><strong>Description:</strong> " + job.description + "</p>";
+            skillList += "<ul>";
+            job.skills.forEach(skill => {
+                skillList += "<li><strong>" + skill.name + ":</strong> " + skill.duration + "</li>";
+            });
+            skillList += "</ul>";
+            document.getElementById("skills-display").innerHTML = skillList;
+        }
+    </script>
+
+</body>
+</html>

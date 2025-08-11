@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Developer Skill Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef5ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .quiz-container {
+            width: 80%;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Question Styles */
+        .question {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .options {
+            margin: 10px 0;
+        }
+
+        .option {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Pop-up Modal Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .popup-content {
+            background-color: #34495e;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .popup-content button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        /* Back to Dashboard Button */
+.back-to-dashboard-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.back-to-dashboard-btn:hover {
+    background-color: #2980b9;
+}
+
+
+        .popup-content button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Front-End Developer Skill Quiz</h1>
+
+    <div class="quiz-container">
+        <form id="quizForm">
+            <!-- Question 1: HTML -->
+            <div class="question">
+                <p>1. What does HTML stand for?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q1" value="a">HyperText Markup Language</label>
+                    <label class="option"><input type="radio" name="q1" value="b">Home Tool Markup Language</label>
+                    <label class="option"><input type="radio" name="q1" value="c">Hyper Transfer Markup Language</label>
+                </div>
+            </div>
+
+            <!-- Question 2: CSS -->
+            <div class="question">
+                <p>2. Which property is used to change the background color in CSS?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q2" value="a">bgcolor</label>
+                    <label class="option"><input type="radio" name="q2" value="b">background-color</label>
+                    <label class="option"><input type="radio" name="q2" value="c">color-background</label>
+                </div>
+            </div>
+
+            <!-- Question 3: JavaScript -->
+            <div class="question">
+                <p>3. Which company developed JavaScript?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q3" value="a">Netscape</label>
+                    <label class="option"><input type="radio" name="q3" value="b">Google</label>
+                    <label class="option"><input type="radio" name="q3" value="c">Microsoft</label>
+                </div>
+            </div>
+
+            <!-- Question 4: Responsive Design -->
+            <div class="question">
+                <p>4. Which of the following is used for creating responsive web designs?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q4" value="a">@media queries</label>
+                    <label class="option"><input type="radio" name="q4" value="b">Flexbox</label>
+                    <label class="option"><input type="radio" name="q4" value="c">Both a and b</label>
+                </div>
+            </div>
+
+            <!-- Question 5: React -->
+            <div class="question">
+                <p>5. What is JSX in React?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q5" value="a">JavaScript and XML</label>
+                    <label class="option"><input type="radio" name="q5" value="b">JavaScript Extension</label>
+                    <label class="option"><input type="radio" name="q5" value="c">JSON Extension</label>
+                </div>
+            </div>
+
+            <!-- Question 6: Git -->
+            <div class="question">
+                <p>6. What is the command to check the status of a Git repository?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q6" value="a">git status</label>
+                    <label class="option"><input type="radio" name="q6" value="b">git check</label>
+                    <label class="option"><input type="radio" name="q6" value="c">git log</label>
+                </div>
+            </div>
+
+            <!-- Question 7: Node.js -->
+            <div class="question">
+                <p>7. Which of the following is used to install a Node.js package?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q7" value="a">npm install</label>
+                    <label class="option"><input type="radio" name="q7" value="b">node install</label>
+                    <label class="option"><input type="radio" name="q7" value="c">install npm</label>
+                </div>
+            </div>
+
+            <!-- Question 8: TypeScript -->
+            <div class="question">
+                <p>8. TypeScript is a superset of which language?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q8" value="a">JavaScript</label>
+                    <label class="option"><input type="radio" name="q8" value="b">Python</label>
+                    <label class="option"><input type="radio" name="q8" value="c">Java</label>
+                </div>
+            </div>
+
+            <!-- Question 9: Testing (Jest/Mocha) -->
+            <div class="question">
+                <p>9. Which testing framework is widely used for testing JavaScript?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q9" value="a">Jest</label>
+                    <label class="option"><input type="radio" name="q9" value="b">JUnit</label>
+                    <label class="option"><input type="radio" name="q9" value="c">Mocha</label>
+                </div>
+            </div>
+
+            <!-- Question 10: Webpack -->
+            <div class="question">
+                <p>10. What is the primary function of Webpack?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q10" value="a">Module bundler</label>
+                    <label class="option"><input type="radio" name="q10" value="b">Code minifier</label>
+                    <label class="option"><input type="radio" name="q10" value="c">Task runner</label>
+                </div>
+            </div>
+
+                      <!-- Question 11: HTML -->
+                      <div class="question">
+                        <p>11. Which tag is used to define a hyperlink in HTML?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q11" value="a">&lt;a&gt;</label>
+                            <label class="option"><input type="radio" name="q11" value="b">&lt;link&gt;</label>
+                            <label class="option"><input type="radio" name="q11" value="c">&lt;href&gt;</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 12: CSS -->
+                    <div class="question">
+                        <p>12. What is the default value of the `position` property in CSS?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q12" value="a">static</label>
+                            <label class="option"><input type="radio" name="q12" value="b">relative</label>
+                            <label class="option"><input type="radio" name="q12" value="c">absolute</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 13: JavaScript -->
+                    <div class="question">
+                        <p>13. What is the correct way to create a function in JavaScript?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q13" value="a">function myFunction()</label>
+                            <label class="option"><input type="radio" name="q13" value="b">def myFunction()</label>
+                            <label class="option"><input type="radio" name="q13" value="c">create myFunction()</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 14: Responsive Design -->
+                    <div class="question">
+                        <p>14. What is the purpose of `viewport` in responsive design?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q14" value="a">Control layout scaling on mobile</label>
+                            <label class="option"><input type="radio" name="q14" value="b">Define grid layout</label>
+                            <label class="option"><input type="radio" name="q14" value="c">Define font size for mobile</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 15: React -->
+                    <div class="question">
+                        <p>15. What is a state in React?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q15" value="a">A special type of variable</label>
+                            <label class="option"><input type="radio" name="q15" value="b">An object that stores data in the component</label>
+                            <label class="option"><input type="radio" name="q15" value="c">A lifecycle method</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 16: Git -->
+                    <div class="question">
+                        <p>16. What command is used to create a new repository in Git?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q16" value="a">git init</label>
+                            <label class="option"><input type="radio" name="q16" value="b">git create</label>
+                            <label class="option"><input type="radio" name="q16" value="c">git clone</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 17: Node.js -->
+                    <div class="question">
+                        <p>17. What does Node.js use to run JavaScript on the server?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q17" value="a">V8 engine</label>
+                            <label class="option"><input type="radio" name="q17" value="b">Node engine</label>
+                            <label class="option"><input type="radio" name="q17" value="c">Java engine</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 18: TypeScript -->
+                    <div class="question">
+                        <p>18. What is the correct way to declare a variable in TypeScript?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q18" value="a">let variableName: type;</label>
+                            <label class="option"><input type="radio" name="q18" value="b">var variableName: type;</label>
+                            <label class="option"><input type="radio" name="q18" value="c">const variableName;</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 19: Testing (Jest/Mocha) -->
+                    <div class="question">
+                        <p>19. Which framework uses assertions for testing JavaScript code?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q19" value="a">Jest</label>
+                            <label class="option"><input type="radio" name="q19" value="b">Mocha</label>
+                            <label class="option"><input type="radio" name="q19" value="c">Chai</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 20: Webpack -->
+                    <div class="question">
+                        <p>20. Which of these is used to bundle JavaScript files with Webpack?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q20" value="a">Webpack.config.js</label>
+                            <label class="option"><input type="radio" name="q20" value="b">Webpack.bundle.js</label>
+                            <label class="option"><input type="radio" name="q20" value="c">Webpack.js</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 21: HTML -->
+                    <div class="question">
+                        <p>21. Which tag is used to define an unordered list in HTML?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q21" value="a">&lt;ul&gt;</label>
+                            <label class="option"><input type="radio" name="q21" value="b">&lt;ol&gt;</label>
+                            <label class="option"><input type="radio" name="q21" value="c">&lt;li&gt;</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 22: CSS -->
+                    <div class="question">
+                        <p>22. Which property is used to set the font size in CSS?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q22" value="a">font-size</label>
+                            <label class="option"><input type="radio" name="q22" value="b">font-style</label>
+                            <label class="option"><input type="radio" name="q22" value="c">text-size</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 23: JavaScript -->
+                    <div class="question">
+                        <p>23. What is the default value of the `display` property in CSS for most elements?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q23" value="a">block</label>
+                            <label class="option"><input type="radio" name="q23" value="b">inline</label>
+                            <label class="option"><input type="radio" name="q23" value="c">flex</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 24: Git -->
+                    <div class="question">
+                        <p>24. Which command is used to stage changes in Git?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q24" value="a">git add</label>
+                            <label class="option"><input type="radio" name="q24" value="b">git commit</label>
+                            <label class="option"><input type="radio" name="q24" value="c">git push</label>
+                        </div>
+                    </div>
+        
+                    <!-- Question 25: Node.js -->
+                    <div class="question">
+                        <p>25. What module is commonly used for file system operations in Node.js?</p>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q25" value="a">fs</label>
+                            <label class="option"><input type="radio" name="q25" value="b">file</label>
+                            <label class="option"><input type="radio" name="q25" value="c">os</label>
+                        </div>
+                    </div>
+        
+                    <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+                </form>
+            </div>
+ <!-- Pop-up Modal -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <p id="resultMessage"></p>
+        <!-- Close Button now redirects to skill_dashboard.html -->
+        <button onclick="goToDashboard()">Close</button>
+    </div>
+</div>
+
+<!-- JavaScript to handle the redirection -->
+<script>
+    // Function to redirect to the dashboard page
+    function goToDashboard() {
+        window.location.href = 'skill_dashboard.html'; // Redirects to skill_dashboard.html
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+            <script>
+                const correctAnswers = {
+                    q1: 'a', q2: 'b', q3: 'a', q4: 'c', q5: 'a',
+                    q6: 'a', q7: 'a', q8: 'a', q9: 'a', q10: 'a',
+                    q11: 'a', q12: 'a', q13: 'a', q14: 'a', q15: 'b',
+                    q16: 'a', q17: 'a', q18: 'a', q19: 'a', q20: 'a',
+                    q21: 'a', q22: 'a', q23: 'a', q24: 'a', q25: 'a'
+                };
+        
+                function submitQuiz() {
+                    let score = 0;
+                    const form = document.getElementById('quizForm');
+                    
+                    for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+                        const userAnswer = form.querySelector(`input[name="${question}"]:checked`);
+                        if (userAnswer && userAnswer.value === correctAnswer) {
+                            score++;
+                        }
+                    }
+                    
+                    const percentage = (score / 25) * 100;
+                    const message = `Quiz completed! Your score is: ${score} out of 25 (${percentage}%)`;
+                    document.getElementById('resultMessage').innerText = message;
+                    document.getElementById('popup').style.display = 'flex';
+                }
+        
+                function closePopup() {
+                    document.getElementById('popup').style.display = 'none';
+                }
+            </script>
+        </body>
+        </html>
+        
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Resources</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Back Button */
+        .back-button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .section h1, .section h2, .section h3 {
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .section ul {
+            list-style-type: none;
+            line-height: 1.8;
+        }
+
+        .section ul li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* Link Styling */
+        .link-list a {
+            text-decoration: none;
+            color: #3498db;
+            margin: 5px 0;
+            display: block;
+        }
+
+        .link-list a:hover {
+            color: #2980b9;
+        }
+
+        /* Skills List */
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            background-color: #ecf0f1;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Other Jobs Section */
+        .other-jobs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .other-jobs button {
+            background-color: #f1c40f;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex: 1 1 calc(30% - 40px);
+            max-width: 300px;
+        }
+
+        .other-jobs button:hover {
+            background-color: #d4ac0d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="dashboard.php" class="back-button">Back to Dashboard</a>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Roadmap Section -->
+        <div class="section">
+            <h1>Roadmap to Becoming a Front-End Developer</h1>
+            <ul>
+                <li><strong>Step 1:</strong> Learn HTML</li>
+                <li><strong>Step 2:</strong> Learn CSS</li>
+                <li><strong>Step 3:</strong> Learn JavaScript</li>
+                <li><strong>Step 4:</strong> Learn Version Control (Git)</li>
+                <li><strong>Step 5:</strong> Learn Responsive Design</li>
+                <li><strong>Step 6:</strong> Learn Front-End Frameworks (React, Angular, Vue)</li>
+                <li><strong>Step 7:</strong> Learn CSS Preprocessors (Sass, LESS)</li>
+                <li><strong>Step 8:</strong> Learn Package Managers (npm, Yarn)</li>
+                <li><strong>Step 9:</strong> Learn Webpack or Build Tools</li>
+                <li><strong>Step 10:</strong> Build Projects</li>
+                <li><strong>Step 11:</strong> Deploy Websites</li>
+                <li><strong>Step 12:</strong> Job Search</li>
+            </ul>
+        </div>
+
+        <!-- Learning Resources Section -->
+        <div class="section">
+            <h2>Learning Resources</h2>
+            <h3>Books:</h3>
+            <div class="link-list">
+                <a href="https://www.amazon.com/dp/0134767248" target="_blank">HTML and CSS: Design and Build Websites</a>
+                <a href="https://www.amazon.com/dp/0134853984" target="_blank">JavaScript: The Good Parts</a>
+                <a href="https://www.amazon.com/dp/1491950297" target="_blank">You Don’t Know JS</a>
+            </div>
+            <h3>Online Courses:</h3>
+            <div class="link-list">
+                <a href="https://www.udemy.com/course/the-web-developer-bootcamp/" target="_blank">The Web Developer Bootcamp (Udemy)</a>
+                <a href="https://freecodecamp.org/learn" target="_blank">FreeCodeCamp</a>
+                <a href="https://www.coursera.org/specializations/web-design" target="_blank">Web Design for Everybody (Coursera)</a>
+            </div>
+        </div>
+
+        <!-- YouTube Tutorials Section -->
+        <div class="section">
+            <h2>YouTube Tutorials</h2>
+            <div class="link-list">
+                <a href="https://www.youtube.com/watch?v=hdI2bqOjy3c" target="_blank">HTML Crash Course for Beginners - Traversy Media</a>
+                <a href="https://www.youtube.com/watch?v=OEVlKkLRK2M" target="_blank">CSS Crash Course for Beginners - Traversy Media</a>
+                <a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" target="_blank">JavaScript Crash Course - Traversy Media</a>
+                <a href="https://www.youtube.com/watch?v=w7ejDZ8SWv8" target="_blank">React JS Crash Course - Traversy Media</a>
+                <a href="https://www.youtube.com/watch?v=QSZeTzjv6qY" target="_blank">Learn JavaScript in 30 Minutes - Dev Ed</a>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2>Skills Needed for Front-End Developer Jobs</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Vue.js / Angular</li>
+                <li>CSS Preprocessors (Sass, LESS)</li>
+                <li>Version Control (Git, GitHub)</li>
+                <li>Responsive Web Design</li>
+                <li>Web Performance Optimization</li>
+                <li>Command Line Basics</li>
+                <li>Debugging and Testing</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Other Jobs Section -->
+    <div class="other-jobs">
+        <button onclick="window.location.href='full_stack.html'">Full Stack Developer</button>
+        <button onclick="window.location.href='data_analyst.html'">Data Analyst</button>
+        <button onclick="window.location.href='cyber.html'">Cybersecurity</button>
+        <button onclick="window.location.href='ml.html'">Machine Learning Engineer</button>
+        <button onclick="window.location.href='backend.html'">Backend Developer</button>
+        <button onclick="window.location.href='mobile.html'">Mobile App Developer</button>
+        <button onclick="window.location.href='devops_engineer.html'">DevOps Engineer</button>
+    </div>
+</body>
+</html>

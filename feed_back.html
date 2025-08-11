@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Management System - Feedback Module</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .container {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .feedback-form {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .star-rating {
+      display: inline-block;
+      font-size: 0;
+      position: relative;
+    }
+    .star-rating input {
+      display: none;
+    }
+    .star-rating label {
+      float: right;
+      padding: 0 2px;
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+    }
+    .star-rating label:before {
+      content: '\2605';
+    }
+    .star-rating input:checked ~ label {
+      color: #ffca08;
+    }
+    .category-rating {
+      margin-bottom: 10px;
+    }
+    #successMessage {
+      display: none;
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .back-button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #95a5a6;
+      color: #fff;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .back-button:hover {
+      background-color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Skill Management System</h1>
+
+    <section class="feedback-form">
+      <h2>Feedback & Rating System</h2>
+      <form action="process_feedback.php" method="POST">
+        <div class="category-rating">
+          <h3>Skill Recommendation</h3>
+          <div class="star-rating">
+            <input type="radio" id="course-5" name="course_rating" value="5" required /><label for="course-5"></label>
+            <input type="radio" id="course-4" name="course_rating" value="4" /><label for="course-4"></label>
+            <input type="radio" id="course-3" name="course_rating" value="3" /><label for="course-3"></label>
+            <input type="radio" id="course-2" name="course_rating" value="2" /><label for="course-2"></label>
+            <input type="radio" id="course-1" name="course_rating" value="1" /><label for="course-1"></label>
+          </div>
+        </div>
+
+        <div class="category-rating">
+          <h3>Content</h3>
+          <div class="star-rating">
+            <input type="radio" id="content-5" name="content_rating" value="5" required /><label for="content-5"></label>
+            <input type="radio" id="content-4" name="content_rating" value="4" /><label for="content-4"></label>
+            <input type="radio" id="content-3" name="content_rating" value="3" /><label for="content-3"></label>
+            <input type="radio" id="content-2" name="content_rating" value="2" /><label for="content-2"></label>
+            <input type="radio" id="content-1" name="content_rating" value="1" /><label for="content-1"></label>
+          </div>
+        </div>
+
+        <div class="category-rating">
+          <h3>Overall User Experience</h3>
+          <div class="star-rating">
+            <input type="radio" id="overall-5" name="overall_rating" value="5" required /><label for="overall-5"></label>
+            <input type="radio" id="overall-4" name="overall_rating" value="4" /><label for="overall-4"></label>
+            <input type="radio" id="overall-3" name="overall_rating" value="3" /><label for="overall-3"></label>
+            <input type="radio" id="overall-2" name="overall_rating" value="2" /><label for="overall-2"></label>
+            <input type="radio" id="overall-1" name="overall_rating" value="1" /><label for="overall-1"></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_comments">Feedback:</label>
+          <textarea id="feedback_comments" name="feedback_comments" rows="4" placeholder="Enter your feedback here"></textarea>
+        </div>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

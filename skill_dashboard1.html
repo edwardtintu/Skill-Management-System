@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Developer Skill Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef5ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        /* Header Section */
+        .header {
+            width: 100%;
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Dashboard Section */
+        .dashboard-container {
+            width: 80%;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Skill Button Styles */
+        .skill-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-button {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .skill-button:hover {
+            background-color: #45a049;
+        }
+
+        .skill-button.soft-skill {
+            background-color: #3498db;
+        }
+
+        .skill-button.soft-skill:hover {
+            background-color: #2980b9;
+        }
+
+        /* New Attempt Quiz Button */
+        .attempt-quiz-btn {
+            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            color: white;
+            font-size: 24px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        /* Position the Back button at the top right corner */
+.back-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.back-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+
+
+        .attempt-quiz-btn:hover {
+            background: linear-gradient(45deg, #ee0979, #ff6a00);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            margin-top: 40px;
+            text-align: center;
+            color: #2c3e50;
+            font-style: italic;
+            font-size: 22px;
+            width: 70%;
+        }
+
+        /* Footer Section */
+        .footer {
+            width: 100%;
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Additional Styles for Real-Time Look */
+        .dashboard-container {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+</div>
+<!-- Back Button -->
+<a href="dashboard.php" class="back-btn">
+<button class="back-button">Back</button>
+</a>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Front-End Developer Skill Dashboard</h1>
+        <p>Track your progress and master the skills needed to become a successful front-end developer!</p>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <h2>Skill Assessment</h2>
+        <p>Select a skill to assess your knowledge or learn more.</p>
+
+        <!-- Skill Buttons -->
+        <div class="skill-buttons">
+            <button class="skill-button" onclick="window.location.href='quiz1.html'">HTML</button>
+            <button class="skill-button" onclick="window.location.href='#'">CSS</button>
+            <button class="skill-button" onclick="window.location.href='#'">JavaScript</button>
+            <button class="skill-button" onclick="window.location.href='#'">Responsive Design</button>
+            <button class="skill-button" onclick="window.location.href='#'">React</button>
+            <button class="skill-button" onclick="window.location.href='#'">Git</button>
+            <button class="skill-button" onclick="window.location.href='#'">Node.js</button>
+            <button class="skill-button" onclick="window.location.href='#'">TypeScript</button>
+            <button class="skill-button" onclick="window.location.href='#'">Testing (Jest/Mocha)</button>
+            <button class="skill-button" onclick="window.location.href='#'">Webpack</button>
+            <!-- Soft Skills Button -->
+            <button class="skill-button soft-skill" onclick="window.location.href='#'">Soft Skills</button>
+        </div>
+
+        <!-- Attempt Quiz Button -->
+        <button class="attempt-quiz-btn" onclick="window.location.href='quiz1.html'">Attempt Quiz</button>
+
+        <!-- Quote Section -->
+        <div class="quote-section">
+            <p>“The only way to do great work is to love what you do.” – Steve Jobs</p>
+            <p>“Learning to write programs stretches your mind and helps you think better.” – Bill Gates</p>
+        </div>
+    
+  
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Front-End Developer Skill Dashboard</p>
+    </div>
+
+</body>
+</html>
